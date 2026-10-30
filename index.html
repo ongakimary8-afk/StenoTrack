@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StenoTrack | Dashboard</title>
+
+    <!-- Connects to CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Javascript link -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Website header that has project name and navigation links. -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="index.html">StenoTrack</a>
+
+            <!-- Navigation links that connect the three project pages -->
+            <nav aria-label="Main navigation">
+                <a class="active" href="index.html">Dashboard</a>
+                <a href="manage.html">Manage Jobs</a>
+                <a href="stat.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Introduces the dashboard and has shortcut to add a job -->
+        <section class="page-intro">
+            <p class="eyebrow">STENOGRAPHY WORKSPACE</p>
+            <h1>Dashboard</h1>
+            <p>
+                Keep client assignments, deadlines, and transcription
+                progress organised in one place.
+            </p>
+            <a class="button" href="manage.html">+ Add a Job</a>
+        </section>
+
+        <!-- JavaScript updates the cards using saved job record -->
+        <section class="stats-grid" aria-label="Job statistics">
+            <article class="stat-card">
+                <p>Total jobs</p>
+                <strong id="totalJobs">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <p>Pending</p>
+                <strong id="pendingJobs">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <p>In progress</p>
+                <strong id="progressJobs">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <p>Completed</p>
+                <strong id="completedJobs">0</strong>
+            </article>
+        </section>
+
+        <!-- JavaScript inserts the latest job cards Into the container -->
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR WORKLOAD</p>
+                    <h2>Recent stenography jobs</h2>
+                </div>
+                <a class="text-link" href="manage.html">View all jobs →</a>
+            </div>
+
+            <!-- Job cards  -->
+            <div id="dashboardJobs" class="job-list"></div>
+        </section>
+
+        <!-- Shows the percentage of jobs marked completed-->
+        <section class="panel progress-panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">OVERALL PROGRESS</p>
+                    <h2>Completion rate</h2>
+                </div>
+                <strong id="completionRate">0%</strong>
+            </div>
+
+            <!-- The width of progress bar is changed by JavaScript-->
+            <div class="progress-track"
+                 role="progressbar"
+                 aria-label="Completed jobs"
+                 aria-valuemin="0"
+                 aria-valuemax="100">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+
+            <p id="progressMessage" class="muted">
+                Add a job to start tracking your progress.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            StenoTrack · Stenography Management System (c) Mary Ongaki
+        </div>
+    </footer>
+</body>
+</html>

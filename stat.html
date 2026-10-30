@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StenoTrack | About</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Shared header with links to the other project pages. -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="index.html">StenoTrack</a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Dashboard</a>
+                <a href="manage.html">Manage Jobs</a>
+                <a class="active" href="stat.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Introduces the system to the visitor. -->
+        <section class="page-intro">
+            <p class="eyebrow">ABOUT THE PROJECT</p>
+            <h1>Stenography, made easier to organise</h1>
+            <p>
+                StenoTrack is a simple web-based system for organising
+                stenography and transcription assignments.
+            </p>
+        </section>
+
+        <!-- Explaining stenography and the problem this project addresses -->
+        <section class="panel">
+            <h2>What is stenography?</h2>
+            <p>
+                Stenography is a method of writing quickly using symbols,
+                abbreviations or specialised keyboard techniques. It is
+                used in court reporting, meetings, interviews and
+                transcription work.
+            </p>
+
+            <h2>Why StenoTrack?</h2>
+            <p>
+                Stenographers may need to manage different clients,
+                deadlines, priorities and assignments. StenoTrack
+                provides one place to record these details and monitor
+                progress.
+            </p>
+        </section>
+
+        <!-- JavaScript fills these statistics using saved job data -->
+        <section class="stats-grid about-stats">
+            <article class="stat-card">
+                <p>Jobs recorded</p>
+                <strong id="aboutTotal">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <p>Jobs completed</p>
+                <strong id="aboutCompleted">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <p>Completion rate</p>
+                <strong id="aboutRate">0%</strong>
+            </article>
+        </section>
+
+        <!-- Summarises the technologies used in the project. -->
+        <section class="panel">
+            <h2>Technologies used</h2>
+
+            <ul class="technology-list">
+                <li><strong>HTML</strong> — structures the pages and forms.</li>
+                <li><strong>CSS</strong> — controls layout, colours, and responsive design.</li>
+                <li><strong>JavaScript</strong> — validates forms and manages jobs.</li>
+                <li><strong>localStorage</strong> — saves records in the browser.</li>
+            </ul>
+
+            <p class="muted">
+                This project organises stenography assignments. It does
+                not automatically convert audio into text or operate a
+                stenotype machine.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            StenoTrack · Stenography Management System (c) Mary Ongaki
+        </div>
+    </footer>
+</body>
+</html>

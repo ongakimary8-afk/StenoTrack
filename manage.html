@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StenoTrack | Manage Jobs</title>
+
+    <!-- CSS and JavaScript. -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Main website navigation. -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="index.html">StenoTrack</a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Dashboard</a>
+                <a class="active" href="manage.html">Manage Jobs</a>
+                <a href="stat.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Explains the purpose of the page -->
+        <section class="page-intro">
+            <p class="eyebrow">ASSIGNMENTS</p>
+            <h1>Manage stenography jobs</h1>
+            <p>
+                Add a client assignment, review existing work
+                or update a job's status.
+            </p>
+        </section>
+
+        <!-- Form used to collect details for a new assignments -->
+        <section class="panel">
+            <h2>Add a new job</h2>
+
+            <!-- JavaScript validates the form before saving the job -->
+            <form id="jobForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="clientName">Client name *</label>
+                        <input id="clientName"
+                               name="clientName"
+                               type="text"
+                               placeholder="e.g. Acme Legal Services"
+                               required>
+                        <!-- Displays a validation error for the client name -->
+                        <small id="clientError" class="field-error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="jobTitle">Job title *</label>
+                        <input id="jobTitle"
+                               name="jobTitle"
+                               type="text"
+                               placeholder="e.g. Court hearing transcript"
+                               required>
+                        <!-- Displays a validation error for the job title -->
+                        <small id="titleError" class="field-error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="jobType">Job type</label>
+                        <select id="jobType" name="jobType">
+                            <option value="Transcription">Transcription</option>
+                            <option value="Court reporting">Court reporting</option>
+                            <option value="Meeting minutes">Meeting minutes</option>
+                            <option value="Dictation">Dictation</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="jobPriority">Priority</label>
+                        <select id="jobPriority" name="jobPriority">
+                            <option value="Normal">Normal</option>
+                            <option value="High">High</option>
+                            <option value="Urgent">Urgent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="dueDate">Due date *</label>
+                        <input id="dueDate"
+                               name="dueDate"
+                               type="date"
+                               required>
+                        <!-- Displays a date validation error -->
+                        <small id="dateError" class="field-error"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="wordCount">Estimated word count</label>
+                        <input id="wordCount"
+                               name="wordCount"
+                               type="number"
+                               min="0"
+                               placeholder="e.g. 2500">
+                        <!-- Displays an invalid word-count message  -->
+                        <small id="wordError" class="field-error"></small>
+                    </div>
+
+                    <div class="form-field full-width">
+                        <label for="jobDescription">Job notes / description</label>
+                        <textarea id="jobDescription"
+                                  name="jobDescription"
+                                  rows="3"
+                                  placeholder="Add instructions or useful details (optional)"></textarea>
+                    </div>
+                </div>
+
+                <!-- JavaScript displays success or error messages -->
+                <p id="formMessage"
+                   class="form-message"
+                   role="status"
+                   aria-live="polite"></p>
+
+                <button class="button" type="submit">Save Job</button>
+            </form>
+        </section>
+
+        <!-- Section for displaying and filtering saved assignments -->
+        <section class="panel">
+            <div class="section-heading manage-heading">
+                <div>
+                    <p class="eyebrow">JOB REGISTER</p>
+                    <h2>
+                        Saved jobs
+                        <span id="jobCount" class="count-label">0</span>
+                    </h2>
+                </div>
+
+                <!-- Selecting a status filters the list through JavaScript -->
+                <div class="filter-control">
+                    <label for="jobFilter">Filter by status</label>
+                    <select id="jobFilter">
+                        <option value="All">All jobs</option>
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- JavaScript creates a card for every matching job -->
+            <div id="manageJobs" class="job-list"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            StenoTrack · Stenography Management System (c) Mary Ongaki
+        </div>
+    </footer>
+</body>
+</html>
